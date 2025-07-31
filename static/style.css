@@ -5,3 +5,40 @@ h1{
 body{
     background-color: rgb(235, 169, 121);
 }
+
+.homeimg {
+    display: block;
+    margin: auto;
+    width: 40%;
+    border-radius: 20px;
+}
+
+.playbuttons{
+    width: 20%;
+    padding: 5%;
+}
+
+.one{
+    display: flex;
+    justify-content: space-evenly;
+    
+} 
+
+.resize{
+    width: 200px;
+}
+
+.Aibutton{
+    width: 175px;
+}
+
+button{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+div{border-style: solid; border-color: black;}
+.coloring{
+    fill: red;
+}

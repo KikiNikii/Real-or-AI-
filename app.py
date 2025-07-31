@@ -5,7 +5,12 @@ app = Flask(__name__)
 
 @app.route("/gamescreen1")
 def index2():
-    return render_template("gamescreen1.html")
+    if 
+    return render_template("gamescreen1.html", score_response = "You are right!")
+
+@app.route("/wrongscreen")
+def index3():
+     return render_template("wrongscreen.html")
 
 
 @app.route("/", methods = ["POST", "GET"])
