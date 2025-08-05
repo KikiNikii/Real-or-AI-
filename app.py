@@ -9,12 +9,22 @@ def index2():
         print(score)
         return render_template("gamescreen1.html", score_response = "What Image is real?", score_board = score)
 
+import time
+
+countdown = 30
+def countdown(s):
+        while s > 0:
+             timer = s - 1
+             time.sleep(1)
+             print(timer)
+        return render_template("gamescreen1.html", timer_message = "Your time ran out!", timer = timer)
+
 # This is gamescreen 2
 @app.route("/screen2")
 def indexQ2():
     global score 
     print(score)
-    return render_template("gamescreen1.html", score_response = "You are right!", score_board = score)
+    return render_template("gamescreen1.html", score_response = "Keep going, what image is real?", score_board = score)
     
 # Right Screen   
 @app.route("/rightscreen")
