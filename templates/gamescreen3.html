@@ -6,42 +6,43 @@
     <title>Nikole's Real or AI</title>
 
     <link href = "/static/style.css" rel = "stylesheet">
-
 </head>
-
 <body>
-  
-<div>
-
-    <div class = "lining">
-        <!-- Scoreboard -->
-        <h1>{{score_response}}</h1>
-        <h1>{{score_board}}</h1>
-        
-        <!-- Timer -->
-        <h1>{{timer_message}}</h1>
-        <h1>{{timer}}</h1>
-
-            <!-- Timer Display -->
-            <div id="timerDisplay" class = "timestyle">
-                00:30
-            </div>
+    
+    <div>
 
         <div class = "lining">
-            img
+            
+            <!-- Scoreboard -->
+            <h1>{{score_response}}</h1>
+            <h1>{{score_board}}</h1>
+            
+            
+                    <!-- Timer -->
+                    <h1>{{timer_message}}</h1>
+                    <h1>{{timer}}</h1>
+            
+                    <!-- Timer Display -->
+                    <div id="timerDisplay" class = "timestyle">
+                        00:30
+                    </div>
+            <div class = "lining">
+                img
+            </div>
+
+            <div class = "one" class = "lining">
+                <!-- buttons -->
+
+                <!-- This is the Wrong one -->
+                <a href = "/wrongscreen"><img class = "Aibutton" src = "/static/human.png" width = 60px></a>
+
+                <!-- This is the Right one -->
+                <a href = "/rightscreen3"><img class = "resize" src = "/static/YesAi.png" width = 60px></a>
+            </div>
         </div>
-
-        <div class = "one" class = "lining">
-            <!-- buttons -->
-
-             <!-- This is the right one -->
-            <a href = "/rightscreen"><img class = "justanimate" class = "Aibutton" src = "/static/human.png" width = 60px></a>
-
-            <!-- This is the wrong one -->
-            <a href = "/wrongscreen"><img class = "justanimate" class = "resize" src = "/static/YesAi.png" width = 60px></a>
-        </div>
+    
     </div>
-
+ 
 </div>
 
 <script>
@@ -112,8 +113,6 @@
     startTimer();
 </script>
 
+
 </body>
 </html>
-
-
-

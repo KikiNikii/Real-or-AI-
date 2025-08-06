@@ -10,30 +10,109 @@
 
 <body>
     
-    <h1>This is page TWO!</h1>
     <div>
 
         <div class = "lining">
-            Container - Scoreboard and Timer
-            {{score_response}}
-            <h1>This is page TWO!</h1>
 
 
             <!-- Scoreboard -->
             <h1>{{score_response}}</h1>
             <h1>{{score_board}}</h1>
     
+            <!-- Timer -->
+            <h1>{{timer_message}}</h1>
+            <h1>{{timer}}</h1>
+    
+                <!-- Timer Display -->
+                <div id="timerDisplay" class = "timestyle">
+                    00:30
+                </div>
             <div class = "lining">
                 img
             </div>
+
+
             <div class = "one" class = "lining">
                 <!-- buttons -->
-                <a href = "/rightscreen"><img class = "Aibutton" src = "/static/YesAi.png" width = 60px></a>
-                <a href = "/wrongscreen"><img class = "resize" src = "/static/NotAi.png" width = 60px></a>
+
+                <!-- This is the right one -->
+                <a href = "/rightscreen2"><img class = "Aibutton" src = "/static/human.png" width = 60px></a>
+
+                <!-- This is the wrong one -->
+                <a href = "/wrongscreen"><img class = "resize" src = "/static/YesAi.png" width = 60px></a>
             </div>
         </div>
     
     </div>
+
+    <script>
+        // Get references to DOM elements
+        const timerContainer = document.getElementById('timerContainer');
+        const timerDisplay = document.getElementById('timerDisplay');
+    
+        // Timer variables
+        let seconds = 30; // Start at 30 seconds
+        let minutes = 0; // Start at 0 minutes
+        let timerInterval = null; // Stores the interval ID to clear it later
+        let isRunning = false; // Flag to check if the timer is currently running
+    
+        /**
+         * Formats a number to always have two digits (e.g., 5 -> "05").
+         * @param {number} num - The number to format.
+         * @returns {string} The formatted string.
+         */
+        function formatTime(num) {
+            return num < 10 ? '0' + num : num;
+        }
+    
+        /**
+         * Updates the timer display with the current minutes and seconds.
+         */
+        function updateDisplay() {
+            timerDisplay.textContent = `${formatTime(minutes)}:${formatTime(seconds)}`;
+        }
+    
+        /**
+         * Decrements the timer by one second.
+         * Handles rollovers from seconds to minutes. Stops the timer at 00:00.
+         */
+        function decrementTimer() {
+            if (minutes === 0 && seconds === 0) {
+                clearInterval(timerInterval); // Stop the timer when it reaches 00:00
+                isRunning = false;
+               
+                // Redirect to the end page
+                window.location.href = '/wrongscreen'; // Change 'end.html' to your desired page
+    
+                return;
+            }
+    
+            // Calculate total seconds remaining, decrement, then convert back to minutes and seconds
+            let totalSeconds = minutes * 60 + seconds - 1;
+            minutes = Math.floor(totalSeconds / 60);
+            seconds = totalSeconds % 60;
+    
+            updateDisplay();
+        }
+    
+        /**
+         * Starts the timer.
+         * Prevents multiple intervals from running simultaneously and ensures it doesn't start if already at zero.
+         */
+        function startTimer() {
+            if (!isRunning && (minutes > 0 || seconds > 0)) { // Only start if not running and not already at zero
+                timerInterval = setInterval(decrementTimer, 1000); // Update every second (1000ms)
+                isRunning = true;
+            }
+        }
+    
+        // Initial display update when the page loads
+        updateDisplay();
+    
+        // Start the timer automatically when the page loads
+        startTimer();
+    </script>
+    
 
 </body>
 </html>
