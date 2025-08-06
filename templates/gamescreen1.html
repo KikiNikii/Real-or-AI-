@@ -14,41 +14,35 @@
 <div>
 
     <div class = "lining">
-        Container - Scoreboard and Timer
-        {{score_response}}
-        {{timer_message}}
+
+        <!-- {{score_response}}
+        {{timer_message}} -->
+
+        
+        <!-- Scoreboard -->
+        <h1>{{score_response}}</h1>
+        <h1>{{score_board}}</h1>
+        
         <!-- Timer -->
         <h1>{{timer_message}}</h1>
         <h1>{{timer}}</h1>
 
             <!-- Timer Display -->
-            <div id="timerDisplay">
+            <div id="timerDisplay" class = "timestyle">
                 00:30
             </div>
-
-        <!-- Scoreboard -->
-        <h1>{{score_response}}</h1>
-        <h1>{{score_board}}</h1>
 
         <div class = "lining">
             img
         </div>
+
         <div class = "one" class = "lining">
             <!-- buttons -->
-            <a href = "/rightscreen"><img class = "Aibutton" class = "justanimate" src = "/static/YesAi.png" width = 60px></a>
-            <a href = "/wrongscreen"><img class = "resize" class = "justanimate" src = "/static/NotAi.png" width = 60px></a>
+            <a href = "/rightscreen"><img class = "justanimate" class = "Aibutton" src = "/static/human.png" width = 60px></a>
+            <a href = "/wrongscreen"><img class = "justanimate" class = "resize" src = "/static/NotAi.png" width = 60px></a>
         </div>
     </div>
 
-</div>
-
-<div id="timerContainer">
-    <h1>30-Second Countdown Timer</h1>
-
-    <!-- Timer Display -->
-    <div id="timerDisplay">
-        00:30
-    </div>
 </div>
 
 <script>
