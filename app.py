@@ -7,14 +7,14 @@ score = 0
 def index2():
         global score
         print(score)
-        return render_template("gamescreen1.html", score_response = "What Image is real?", score_board = score)
+        return render_template("gamescreen1.html", score_response = "Lets get started on this mini game, do you think that this image is real?", score_board = score)
 
 # This is gamescreen 2
 @app.route("/screen2")
 def indexQ2():
     global score 
     print(score)
-    return render_template("gamescreen2.html", score_response = "Keep going, what image is real?", score_board = score)
+    return render_template("gamescreen2.html", score_response = "Keep going!", score_board = score)
 
 # This is gamescreen 3
 @app.route("/screen3")
@@ -22,6 +22,14 @@ def indexQ3():
     global score 
     print(score)
     return render_template("gamescreen3.html", score_response = "Nice! Lets continue", score_board = score)
+
+# This is gamescreen 4
+@app.route("/screen4")
+def indexQ4():
+    global score 
+    print(score)
+    return render_template("gamescreen4.html", score_response = "Nice! Lets continue", score_board = score)
+
 
 # _______________________________________________________
 
@@ -48,7 +56,15 @@ def indexYes2():
         global score 
         score = score + 1
         print(score)
-        return render_template("rightscreen.html", score_response = "You are right!", score_board = score )
+        return render_template("rightscreen3.html", score_response = "You are right!", score_board = score )
+
+# Right Screen 4
+@app.route("/rightscreen4")
+def indexYes3():
+        global score 
+        score = score + 1
+        print(score)
+        return render_template("rightscreen4.html", score_response = "WOW! Those kids really did look real but we made it out!", score_board = score )
 
 
 # _______________________________________________________

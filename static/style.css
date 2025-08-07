@@ -63,7 +63,7 @@ button{
 }
 
 .lining{
-    border-style: solid;
+    border-style:inherit;
     border-color: black;
 }
 
@@ -102,4 +102,29 @@ a:visited{
     padding: 20px;
     border-radius:30px;
     width: 60%;
+}
+
+.screenwords{
+    padding: 20px;
+}
+
+.screenimg{
+    display: flex;
+    justify-self: center;
+    border-radius: 10px;
+}
+
+.bannerright{
+    display: flex;
+    justify-self: flex-end;
+    padding: 20px;
+    border-radius:30px;
+    width: 60%;
+}
+
+.wrongbanner{
+    display: flex;
+    justify-self: center;
+    border-radius: 15px;
+    width: 50%;
 }
