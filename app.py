@@ -48,7 +48,7 @@ def indexYes1():
         global score 
         score = score + 1
         print(score)
-        return render_template("rightscreen2.html", score_response = "You are right!", score_board = score )
+        return render_template("rightscreen2.html", score_response = "Don't stop, don't stop until you get your shot!", score_board = score )
 
 # Right Screen 3
 @app.route("/rightscreen3")
@@ -82,8 +82,12 @@ def indexNo():
 def index():
         global score
         score = 0
-        return render_template("index.html")
+        return render_template("index.html", score_response = "Amazing, you have made it to the end!" )
 
+# Ending screen
+@app.route("/endscreen")
+def indexend():
+     return render_template("end.html", score_responce = "You made it to the end! This is your score", score_board = score)
 
 
 # main driver function
